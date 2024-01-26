@@ -1,0 +1,16 @@
+*{
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: hidden
+}
+
+.mainContainer{
+  display: flex;
+}
+
+.overlayImage{
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+}
