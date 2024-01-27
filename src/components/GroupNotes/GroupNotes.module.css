@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap");
+
+.container{
+    background-color: #DAE5F5;
+    width:70vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.topBar {
+    width: 70vw;
+    background-color: #001F8B;
+    height: 8vh;
+}
+
+.notesArea{
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+    /* border: 1px solid green; */
+}
+
+.createNotesArea {
+    background-color: #001F8B;
+    height: 42vh;
+    width: 70vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.noteInput{
+    position: relative;
+    width: 97%;
+    height: 80%;
+    border-radius: 0.5rem;
+    display: flex;
+    text-align:justify;
+    border-style: none;
+    font-family: 'Roboto';
+    font-weight: 300;
+}
+
+.noteInput::placeholder{
+    position: absolute;
+    top: 1rem; 
+    left: 1rem; 
+    color: #9A9A9A; 
+    font-size: 1.25rem;
+    font-family: 'Roboto';
+    font-weight: 300;
+    letter-spacing: 1.25px;
+  }
+
+  .note{
+    position: relative;
+    height: 10rem;
+    width: 61rem;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 2px  #000000;
+    border-radius: 0.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 1rem 0rem 1.25rem 1rem;
+    /* border: 1px solid red; */
+  }
+
+  .noteText {
+    padding: 1rem;
+    font-family: 'Roboto';
+    font-weight: 300;
+    letter-spacing: 1px;
+    word-spacing: 3px;
+    color: #000000;
+    /* border: 1px solid red; */
+  }
+
+  .details {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding-bottom: 0.5rem;
+    word-spacing: 1px;
+  }
+
+  .middleDot{
+    /* border: 1px solid blue; */
+    padding: 0rem 0.75rem 0rem 0.75rem;
+  }
+
+  .noteTime {
+    padding-right: 2rem;
+  }
+
+  .noteContainer{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid red;
+    overflow-y: scroll;
+  }

@@ -3,3 +3,49 @@
     position: relative;
     /* height:85vh;*/
 }
+
+.groupContainer{
+    display: flex;
+    cursor: pointer;
+    /* margin-left: 1rem; */
+    width: 99.5%; 
+    margin-bottom: 1rem;
+  }
+  
+  .groupContainer:hover{
+    background-color: rgba(47,47,47,0.17);
+    border-radius: 0.75rem;
+  }
+  
+  .selectedGroupContainer{
+    display: flex;
+    cursor: pointer;
+    /* margin-left: 1rem; */
+    background-color: rgba(47,47,47,0.17);
+    border-radius: 0.75rem;
+    width: 99.5%; 
+  }
+  
+  .baseProfileIcon {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: #FFC0C0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: "bold";
+    margin: 0.5rem 0.75rem 0.5rem 2rem;
+  }
+  
+  .groupName{
+    /* border: 1px solid blue; */
+    display: flex;
+    align-items: center;
+    font-family: 'Roboto';
+    font-weight: 500;
+    font-size: 1rem;
+    color: #000000;
+  }

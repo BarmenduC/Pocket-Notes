@@ -82,6 +82,7 @@ const GroupBar = (props) => {
             <div className={styles.addNoteSubHeading}>
               <p>Group Name</p>
               <input
+                name="groupName"
                 className={styles.groupNameInput}
                 type="text"
                 placeholder="Enter group name"
