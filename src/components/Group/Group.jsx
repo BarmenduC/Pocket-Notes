@@ -38,6 +38,38 @@ const Group = () => {
       fontSize: "1.5rem",
       selected: false,
     },
+    {
+      id: 4,
+      name: "Gajendra Purohit",
+      backgroundColor: "#4ddff8",
+      textColor: "#fff",
+      fontSize: "1.5rem",
+      selected: false,
+    },
+    {
+      id: 5,
+      name: "Rishabh Arora",
+      backgroundColor: "#bc508a",
+      textColor: "#fff",
+      fontSize: "1.5rem",
+      selected: false,
+    },
+    {
+      id: 6,
+      name: "Namo Kaul",
+      backgroundColor: "#bc888a",
+      textColor: "#fff",
+      fontSize: "1.5rem",
+      selected: false,
+    },
+    {
+      id: 7,
+      name: "Barmendu Chakraborty",
+      backgroundColor: "#d9986b",
+      textColor: "#fff",
+      fontSize: "1.5rem",
+      selected: false,
+    },
   ]);
 
   const GroupProfile = ({
@@ -55,20 +87,20 @@ const Group = () => {
       .slice(0, 2)
       .join("");
 
-      const groupSelector = (id) => {
-        console.log(id);
-      
-        // Create a new array with updated classes based on the condition
-        const updatedGroups = groups.map((group) => ({
-          ...group,
-          className: group.id === id ? styles.selectedGroupContainer : styles.groupContainer,
-        }));
+    const groupSelector = (id) => {
+      console.log(id);
 
-        console.log(updatedGroups)
-      
-        // Set the entire array with updated classes
-        // setGroups(updatedGroups);
-      };
+      // Create a new array with updated classes based on the condition
+      const updatedGroups = groups.map((group) => ({
+        ...group,
+        className:
+          group.id === id
+            ? styles.selectedGroupContainer
+            : styles.groupContainer,
+      }));
+
+      console.log(updatedGroups);
+    };
 
     return (
       <div className={`${dynamicClass}`} onClick={() => groupSelector(id)}>
