@@ -43,14 +43,9 @@ function App() {
           <></>
         )}
         <GroupBar popupOpen={popupOpen} setPopupOpen={setPopupOpen} />
-        {/* <NotesSection popupOpen={popupOpen} setPopupOpen={setPopupOpen} /> */}
-        <div className="groupNotesContainer">
-          <GroupNotes />
-          <GroupNotes />
-          <GroupNotes />
-          <GroupNotes />
-          <GroupNotes />
-        </div>
+        <NotesSection popupOpen={popupOpen} setPopupOpen={setPopupOpen} />
+
+        {/* <GroupNotes /> */}
       </div>
     </>
   );
