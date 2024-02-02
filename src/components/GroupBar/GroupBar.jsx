@@ -4,8 +4,6 @@ import styles from "./GroupBar.module.css";
 import Group from "../Group/Group";
 
 const GroupBar = (props) => {
-  
-
   return (
     <>
       <div className={styles.container}>
@@ -13,7 +11,12 @@ const GroupBar = (props) => {
           <h1 className={styles.headingText}>Pocket Notes</h1>
         </div>
         <div className={styles.notes}>
-          <Group popupOpen={props.popupOpen} setPopupOpen={props.setPopupOpen} />
+          <Group
+            popupOpen={props.popupOpen}
+            setPopupOpen={props.setPopupOpen}
+            NSectionVisible={props.NSectionVisible}
+            setNSectionVisible={props.setNSectionVisible}
+          />
         </div>
       </div>
     </>

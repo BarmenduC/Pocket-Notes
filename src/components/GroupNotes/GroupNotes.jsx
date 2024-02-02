@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./GroupNotes.module.css";
 import middleDot from '../../assets/middleDot.svg'
 
-const GroupNotes = () => {
+const GroupNotes = ({id}) => {
   return (
     <div className={styles.container}>
       <div className={styles.topBar}></div>

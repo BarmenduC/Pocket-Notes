@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./Group.module.css";
 import plusImage from "../../assets/+.png";
+import GroupNotes from "../GroupNotes/GroupNotes";
 // import ProfilePicture from "../ProfilePicture/ProfilePicture";
 
 const Group = (props) => {
@@ -77,6 +78,7 @@ const Group = (props) => {
     backgroundColor = "black",
     selected,
     setGroups,
+    NSectionVisible, setNSectionVisible
   }) => {
 
     const initials = name
@@ -97,6 +99,8 @@ const Group = (props) => {
             : styles.groupContainer,
       }));
       console.log(updatedGroups);
+      {setNSectionVisible(!NSectionVisible)}
+      <GroupNotes id={id} />
     };
 
     return (
@@ -171,6 +175,7 @@ const Group = (props) => {
           fontSize={group.fontSize}
           selected={group.selected}
           setGroups={setGroups}
+          NSectionVisible={props.NSectionVisible} setNSectionVisible={props.setNSectionVisible}
         />
       ))}
       <div className={styles.addNote} onClick={() => handleClick()}>

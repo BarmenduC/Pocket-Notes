@@ -6,6 +6,7 @@ import GroupNotes from "./components/GroupNotes/GroupNotes";
 
 function App() {
   const [popupOpen, setPopupOpen] = useState(false);
+  const [NSectionVisible, setNSectionVisible] = useState(true);
 
   return (
     <>
@@ -42,8 +43,17 @@ function App() {
         ) : (
           <></>
         )} */}
-        <GroupBar popupOpen={popupOpen} setPopupOpen={setPopupOpen} />
-        <NotesSection popupOpen={popupOpen} setPopupOpen={setPopupOpen} />
+        <GroupBar
+          popupOpen={popupOpen}
+          setPopupOpen={setPopupOpen}
+          NSectionVisible={NSectionVisible}
+          setNSectionVisible={setNSectionVisible}
+        />
+        {NSectionVisible ? (
+          <NotesSection popupOpen={popupOpen} setPopupOpen={setPopupOpen} />
+        ) : (
+          <></>
+        )}
 
         {/* <GroupNotes /> */}
       </div>
