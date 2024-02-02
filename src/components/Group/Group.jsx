@@ -6,7 +6,8 @@ import plusImage from "../../assets/+.png";
 const Group = (props) => {
 
   const [selected, setSelected] = useState(false);
-  const [currentID, setCurrentID] = useState(2);
+  const [selectedColor, setSelectedColor] = useState(null)
+  const [currentID, setCurrentID] = useState(0);
   const [groupName, setGroupName] = useState("");
   const [dynamicClass, setDynamicClass] = useState(styles.groupContainer);
   const [addNoteFlag, setAddNoteFlag] = useState(false);
@@ -52,20 +53,34 @@ const Group = (props) => {
     },
   ]);
   const colorArrayRef = useRef(colorArray);
+  // const [groups, setGroups] = useState([
+  //   {
+  //     id: 0,
+  //     name: "Python Notes",
+  //     backgroundColor: "#FFCOCO",
+  //     selected: false,
+  //   },
+  //   {
+  //     id: 1,
+  //     name: "Nishant Gawar Singh",
+  //     backgroundColor: "#4CAF50",
+  //     selected: false,
+  //   },
+  // ]);
   const [groups, setGroups] = useState([
-    {
-      id: 0,
-      name: "Python Notes",
-      backgroundColor: "#FFCOCO",
-      selected: false,
-    },
-    {
-      id: 1,
-      name: "Nishant Gawar Singh",
-      backgroundColor: "#4CAF50",
-      selected: false,
-    },
+    
   ]);
+
+  useEffect(() => {
+    const groupDetailArray = localStorage.getItem('groupArray')
+    if(groupDetailArray){
+      setGroups(JSON.parse(groupDetailArray))
+
+    }
+  
+    
+  }, [])
+  
 
 
   const GroupProfile = ({
@@ -80,7 +95,7 @@ const Group = (props) => {
       .split(" ")
       .map((part) => part[0])
       .slice(0, 2)
-      .join("");
+      .join("").toUpperCase();
 
     const groupSelector = (id) => {
       console.log(id);
@@ -119,41 +134,36 @@ const Group = (props) => {
 
   const newGroup = () => {
     console.log(inputRef.current.value);
-    console.log(colorRef.current.style.backgroundColor);
+    // console.log(colorRef.current.style.backgroundColor);
     const newItem = {
       id: currentID,
       name: inputRef.current.value,
-      backgroundColor: colorRef.current.style.backgroundColor,
+      backgroundColor: selectedColor,
       selected: false,
     }
     const updatedArray = [...groups, newItem]
     console.log(updatedArray)
     setGroups(updatedArray)
-    // let newGroupName = inputRef.current.value;
-    // let newGroupColor = colorRef.current.style.backgroundColor;
-    // const updatedGroup = groups.map((group) => ({
-    //   ...group,
-    //   id : currentID,
-    //   name : newGroupName,
-    //   backgroundColor : newGroupColor,
-    //   selected : false,
-    // }))
-    // console.log(updatedGroup)
-    // setGroups(updatedGroup)
     setCurrentID(currentID + 1)
-    // console.log(currentID)
-    // console.log(updatedGroup)
+    localStorage.setItem('groupArray', JSON.stringify(updatedArray));
   };
 
+  // const selectColor = (event) => {
+  //   const updatedColors = colorArray.map((color) => ({
+  //     ...color,
+  //     selected: color.id === event.target.id, 
+  //   }));
+  //   console.log(colorArray)
+  //   setColorArray(updatedColors);
+  //   console.log(event.target.style.backgroundColor)
+  //   console.log(event.target.id)
+  //   console.log(updatedColors)
+  // };
+
   const selectColor = (event) => {
-    const updatedColors = colorArray.map((color) => ({
-      ...color,
-      selected: color.id === event.target.id,
-    }));
-    setColorArray(updatedColors);
-    // console.log(event.target.style.backgroundColor)
-    // console.log(event.target.id)
-  };
+    console.log(event.target.style.backgroundColor)
+    setSelectedColor(event.target.style.backgroundColor)
+  }
 
   useEffect(() => {
     const handleClickOutside = (event) => {

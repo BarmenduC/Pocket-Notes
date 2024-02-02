@@ -27,7 +27,7 @@ function App() {
         )}
         , [popupOpen])} */}
 
-        {popupOpen ? (
+        {/* {popupOpen ? (
           <div
             // src={overlay}
             style={{
@@ -41,7 +41,7 @@ function App() {
           />
         ) : (
           <></>
-        )}
+        )} */}
         <GroupBar popupOpen={popupOpen} setPopupOpen={setPopupOpen} />
         <NotesSection popupOpen={popupOpen} setPopupOpen={setPopupOpen} />
 
