@@ -52,21 +52,9 @@ const Group = (props) => {
       selected: false,
     },
   ]);
+
   const colorArrayRef = useRef(colorArray);
-  // const [groups, setGroups] = useState([
-  //   {
-  //     id: 0,
-  //     name: "Python Notes",
-  //     backgroundColor: "#FFCOCO",
-  //     selected: false,
-  //   },
-  //   {
-  //     id: 1,
-  //     name: "Nishant Gawar Singh",
-  //     backgroundColor: "#4CAF50",
-  //     selected: false,
-  //   },
-  // ]);
+
   const [groups, setGroups] = useState([
     
   ]);
@@ -147,18 +135,6 @@ const Group = (props) => {
     setCurrentID(currentID + 1)
     localStorage.setItem('groupArray', JSON.stringify(updatedArray));
   };
-
-  // const selectColor = (event) => {
-  //   const updatedColors = colorArray.map((color) => ({
-  //     ...color,
-  //     selected: color.id === event.target.id, 
-  //   }));
-  //   console.log(colorArray)
-  //   setColorArray(updatedColors);
-  //   console.log(event.target.style.backgroundColor)
-  //   console.log(event.target.id)
-  //   console.log(updatedColors)
-  // };
 
   const selectColor = (event) => {
     console.log(event.target.style.backgroundColor)
