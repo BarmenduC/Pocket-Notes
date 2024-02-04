@@ -55,7 +55,7 @@ function App() {
           <></>
         )}
 
-        {/* <GroupNotes /> */}
+        {!NSectionVisible ? <GroupNotes /> : <></>}
       </div>
     </>
   );

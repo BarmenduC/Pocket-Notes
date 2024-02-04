@@ -40,6 +40,9 @@
     border-style: none;
     font-family: 'Roboto';
     font-weight: 300;
+    text-wrap: nowrap;
+    overflow-x: none;
+    padding-left: 1rem;
 }
 
 .noteInput::placeholder{
@@ -99,4 +102,11 @@
     flex-direction: column;
     border: 1px solid red;
     overflow-y: scroll;
+  }
+
+  .sendImgButton {
+    position: absolute;
+    top: 91.5%;
+    right: 2%;
+    cursor: pointer;
   }
