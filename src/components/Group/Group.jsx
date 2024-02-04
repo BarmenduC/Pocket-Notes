@@ -64,9 +64,11 @@ const Group = (props) => {
     const groupDetailArray = localStorage.getItem('groupArray')
     if(groupDetailArray){
       setGroups(JSON.parse(groupDetailArray))
-
     }
-  
+    const currentGroupID = localStorage.getItem('currentID')
+    if(currentGroupID){
+      setCurrentID(JSON.parse(currentGroupID))
+    }
     
   }, [])
   
@@ -137,7 +139,9 @@ const Group = (props) => {
     console.log(updatedArray)
     setGroups(updatedArray)
     setCurrentID(currentID + 1)
+    localStorage.setItem('currentID', JSON.stringify(currentID+1))
     localStorage.setItem('groupArray', JSON.stringify(updatedArray));
+
   };
 
   const selectColor = (event) => {

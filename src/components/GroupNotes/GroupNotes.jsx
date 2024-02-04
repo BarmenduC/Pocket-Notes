@@ -71,6 +71,7 @@ const GroupNotes = ({ id }) => {
     const updatedArray = [...notes, newItem];
     setNotes(updatedArray);
     setCurrentNoteID(currentNoteID + 1);
+    localStorage.setItem('currentNoteID', JSON.stringify(currentNoteID + 1))
     localStorage.setItem("notes", JSON.stringify(updatedArray));
     inputRef.current.value = "";
   };
@@ -79,6 +80,10 @@ const GroupNotes = ({ id }) => {
     const notesArray = localStorage.getItem("notes");
     if (notesArray) {
       setNotes(JSON.parse(notesArray));
+    }
+    const currentNoteID = localStorage.getItem('currentNoteID')
+    if (currentNoteID) {
+      setCurrentNoteID(JSON.parse(currentNoteID))
     }
   }, []);
 
